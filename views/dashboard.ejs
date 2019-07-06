@@ -1,0 +1,21 @@
+
+<%- include ./layouts/header.ejs %>    
+
+<!--
+including footer content which is common for all pages
+-->
+  
+<h1><%= title %></h1>
+<% if (messages.error) { %>
+    <p style="color:red"><%- messages.error %></p>
+<% } %>
+ 
+<% if (messages.success) { %>
+    <p style="color:green"><%- messages.success %></p>
+<% } %>  
+<div class="row">
+    <div class="col-md-6">
+        <h2>Welcome <strong><%= username %>!</strong></h2>
+    </div>
+</div>
+<%- include ./layouts/footer.ejs %>

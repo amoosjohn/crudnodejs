@@ -1,0 +1,32 @@
+
+<%- include ../layouts/header.ejs %>    
+
+<!--
+including footer content which is common for all pages
+-->
+  
+<h1><%= title %></h1>
+<table class="table table-hover">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        <% if(data.length) {%>
+        <% for(var i=0;i<data.length;i++){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= data[i].name %></td>
+            <td><%= data[i].age %></td>
+            <td><%= data[i].email %></td>
+            <td><a href="/users/edit/<%= data[i].id %>" class="btn btn-primary btn-sm">Edit</a>
+                <a href="/users/delete/<%= data[i].id %>" class="btn btn-danger btn-sm">Delete</a></td>
+        </tr>
+        <% } %>
+        <% } %>
+    </tbody>
+</table>
+<%- include ../layouts/footer.ejs %>
