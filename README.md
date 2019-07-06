@@ -1,11 +1,13 @@
-#CRUD with login Nodejs,Express and Mysql
+# CRUD with login Nodejs,Express and Mysql
 this is a basic application login & crud application that uses nodejs in the backend, mysql as database.
 
-#Installation
+# Installation
 npm install
 
-#Run Application
+
+# Run Application
 node app.js
 
-#Import Database
+
+# Import Database
 nodejs.sql
