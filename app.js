@@ -13,8 +13,10 @@ var path = require('path');
 var http = require('http');
 var bcrypt = require('bcrypt-nodejs');
 var passport = require('passport');
+//import apiRouting from './helpers/api-routing';
 /*var controllers = require('./controllers');
-*/var Sequelize = require('sequelize');
+*/
+var Sequelize = require('sequelize');
 var config = require('./config');
 var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
   host: 'localhost',
