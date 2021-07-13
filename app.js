@@ -140,6 +140,6 @@ app.use('/users', users)
 
 //app.use(app.router);
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log('Server running at port :',http.address().port)
+app.listen(3000, function(){
+    console.log('Server running at port : 3000')
 })
