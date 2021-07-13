@@ -38,7 +38,20 @@ app.get('/employee/create', function(req, res,next) {
 
 app.post('/employee/add', function(req, res) {
     
-    
+    req.assert('name','Name is required!').notEmpty();
+    req.assert('email','Email is required!').notEmpty();
+    req.assert('phone','Phone is required!').isEmail();
+    // req.assert('password','Password is required!').notEmpty();
+
+    var errors = req.validationErrors();
+    if(errors) {
+        var errors_msg = '';
+        errors.forEach(function(errors){
+            errors_msg += "</p>"+errors.msg+"</p>";
+        });
+        req.flash('error',errors_msg);
+        res.redirect('/employee/create');
+    }
 
     Employees.create({
         name:req.body.name,

@@ -7,6 +7,9 @@ including footer content which is common for all pages
   
 <h1><%= title %></h1>
 <% if (messages.error) { %>
+    <div class="alert alert-danger">
+        <%- messages.error %>
+    </div>
     <p style="color:red"><%- messages.error %></p>
 <% } %>
  
