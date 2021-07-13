@@ -7,7 +7,7 @@ var config = {
         db : 'heroku_4bf20b93ecd3ec1'
     },
     server : {
-        host:'127.0.0.1',
+        host:'us-cdbr-east-04.cleardb.com',
         port:'3001',
     }
 };
