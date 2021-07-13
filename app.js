@@ -19,7 +19,7 @@ var passport = require('passport');
 var Sequelize = require('sequelize');
 var config = require('./config');
 var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
-  host: 'localhost',
+  host: 'us-cdbr-east-04.cleardb.com',
   dialect: 'mysql',
 
   pool: {
@@ -139,7 +139,7 @@ app.use('/users', users)
 
 
 //app.use(app.router);
-
-app.listen(3000, function(){
-    console.log('Server running at port : 3000')
+let port=process.env.PORT||4000
+app.listen(port, function(){
+    console.log(`Server running at port ${port}`)
 })

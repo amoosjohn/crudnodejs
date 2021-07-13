@@ -1,10 +1,10 @@
 var config = {
     database: {
-        host:'localhost',
-        user : 'root',
-        password : '',
+        host:'us-cdbr-east-04.cleardb.com',
+        user : 'b2d9c7e960c28c',
+        password : '04d0654b',
         port : '3306',
-        db : 'nodejs'
+        db : 'heroku_4bf20b93ecd3ec1'
     },
     server : {
         host:'127.0.0.1',
