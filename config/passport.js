@@ -9,7 +9,8 @@ var mysql = require('mysql');
 var user = require('../models/').users;
 var dbconfig = require('./database');
 //var dbConfiguration = {};
-var connection = mysql.createConnection(dbconfig.connection);
+const dbUrl = "mysql://b2d9c7e960c28c:04d0654b@us-cdbr-east-04.cleardb.com/heroku_4bf20b93ecd3ec1?reconnect=true";
+var connection = mysql.createConnection(dbUrl);
 
 connection.query('USE ' + dbconfig.database);
 
