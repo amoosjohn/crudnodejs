@@ -18,21 +18,22 @@ var passport = require('passport');
 */
 var Sequelize = require('sequelize');
 var config = require('./config');
-var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
-  host: 'us-cdbr-east-04.cleardb.com',
-  dialect: 'mysql',
+var sequelize = new Sequelize(config.dbUrl, {});
+// var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
+//   host: 'us-cdbr-east-04.cleardb.com',
+//   dialect: 'mysql',
 
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  },
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     acquire: 30000,
+//     idle: 10000
+//   },
 
 
-  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
-  operatorsAliases: false
-});
+//   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+//   operatorsAliases: false
+// });
 
 var app = express();
 module.exports = bcrypt;

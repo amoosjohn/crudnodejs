@@ -9,7 +9,8 @@ var config = {
     server : {
         host:'us-cdbr-east-04.cleardb.com',
         port:'3001',
-    }
+    },
+    dbUrl:'mysql://b2d9c7e960c28c:04d0654b@us-cdbr-east-04.cleardb.com/heroku_4bf20b93ecd3ec1?reconnect=true'
 };
 
 module.exports = config;
