@@ -51,23 +51,26 @@ app.post('/employee/add', function(req, res) {
         req.flash('error',errors_msg);
         res.redirect('/employee/create');
     }
-
-    Employees.create({
-        name:req.body.name,
-        email:req.body.email,
-        phone:req.body.phone,
-        address:req.body.address
-    }).then((employees)=>{
-        req.flash('success', 'Data added successfully!')
-        res.redirect('/employee');
-    }).catch((error)=>{
-        req.flash('error', error)
-        res.render('employees/create',{title:'Add Employee',
-        name:'',
-        age:'',
-        email:'',
+    else {
+        Employees.create({
+            name:req.body.name,
+            email:req.body.email,
+            phone:req.body.phone,
+            address:req.body.address
+        }).then((employees)=>{
+            req.flash('success', 'Data added successfully!')
+            res.redirect('/employee');
+        }).catch((error)=>{
+            req.flash('error', error)
+            res.render('employees/create',{title:'Add Employee',
+            name:'',
+            age:'',
+            email:'',
+            });
         });
-    });
+    }
+
+    
 });
 
 
