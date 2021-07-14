@@ -7,12 +7,11 @@ var flash = require('express-flash')
 var bcrypt = require('bcrypt-nodejs');
 var mysql = require('mysql');
 var user = require('../models/').users;
-var dbconfig = require('./database');
+var config = require('./../config');
 //var dbConfiguration = {};
-const dbUrl = "mysql://b2d9c7e960c28c:04d0654b@us-cdbr-east-04.cleardb.com/heroku_4bf20b93ecd3ec1?reconnect=true";
-var connection = mysql.createConnection(dbUrl);
-
-connection.query('USE ' + dbconfig.database);
+// var connection = mysql.createConnection(dbUrl);
+var connection = mysql.createPool(config.dbUrl);
+connection.query('USE ' + config.database.db);
 
 /*connection.connect(function(err){
     if(err){
