@@ -4,21 +4,22 @@ const Sequelize = require('sequelize')
 var config = require('./../config');
 const db = {}
 
-var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
-  host: 'localhost',
-  dialect: 'mysql',
+var sequelize = new Sequelize(config.dbUrl, {});
+// var sequelize = new Sequelize(config.database.db, config.database.user,  config.database.password, {
+//   host: 'localhost',
+//   dialect: 'mysql',
 
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  },
+//   pool: {
+//     max: 5,
+//     min: 0,
+//     acquire: 30000,
+//     idle: 10000
+//   },
 
 
-  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
-  operatorsAliases: false
-});
+//   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+//   operatorsAliases: false
+// });
 
 fs
     .readdirSync(__dirname)
