@@ -124,19 +124,20 @@ var index = require('./routes/index')
 var users = require('./routes/users')
 require('./controller/auth.js')(app, passport,sequelize); 
 require('./controller/employees.js')(app, sequelize);
+require('./controller/users.js')(app, sequelize);
 
 //app.use('/', index)
 app.use('/login', index)
-app.use('/users', users)
+// app.use('/users', users)
 //app.use('/employee', employee)
 
 //The 404 Route (ALWAYS Keep this as the last route)
-/*app.get('*', function (req, res) {
-  res.render('front/errors/404', {
-      page_title: "404 Error Page |"
+app.get('*', function (req, res) {
+  res.render('404', {
+    title: "404 Error Page"
   });
 });
-*/
+
 
 
 //app.use(app.router);
