@@ -22,6 +22,7 @@ including footer content which is common for all pages
             <td><%= data[i].name %></td>
             <td><%= data[i].age %></td>
             <td><%= data[i].email %></td>
+            <td><%= data[i].status == 1 ? 'Active' : 'Deactive' %></td>
             <td><a href="/users/edit/<%= data[i].id %>" class="btn btn-primary btn-sm">Edit</a>
                 <a href="/users/delete/<%= data[i].id %>" class="btn btn-danger btn-sm">Delete</a></td>
         </tr>
