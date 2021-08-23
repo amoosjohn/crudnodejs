@@ -12,7 +12,7 @@ let route = function (app,config){
 
         //make controller a path
         controllerPath = path.normalize(`${config.root_path}/api/v${config.root_path}/${controller}/${controller}.controller.js`);
-
+        console.log('controllerPath',controllerPath)
 
         if(fs.existsSync(controllerPath)) { //check if controller exists
             if(method == null) {
